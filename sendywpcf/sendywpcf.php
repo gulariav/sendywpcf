@@ -18,10 +18,10 @@ add_action('init', 'sendywpcf_init');
 function sendywpcf_init() {
 
 	add_action( 'wpcf7_mail_sent', 'subscribe_from_cf7');
-	if (!function_exists('wpcf7_add_shortcode')) {
+	if (!function_exists('wpcf7_add_form_tag')) {
 		return false;
 	}
-	wpcf7_add_shortcode('sendywpcf', 'get_list_id');
+	wpcf7_add_form_tag('sendywpcf', 'get_list_id');
 
 	return true;
 }
